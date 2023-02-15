@@ -15,7 +15,28 @@
             {{ number }}
           </li>
         </div>
-        <div *ngIf="onlyOdd === false">
+        <!-- <div *ngIf="onlyOdd === false">
+          <li
+            class="list-group-item"
+            [ngClass]="{even: number % 2 === 0}"
+            [ngStyle]="{backgroundColor: number % 2 === 0 ? 'yellow' : 'transparent'}"
+            *ngFor="let number of evenNumbers">
+            {{ number }}
+          </li>
+        </div>
+        <ng-template [ngIf]="!onlyOdd">
+          <div>
+            <h1>This below section is not part of the main template, rather the ng-template, only when the structural directive is true</h1>
+            <li
+            class="list-group-item"
+            [ngClass]="{even: number % 2 === 0}"
+            [ngStyle]="{backgroundColor: number % 2 === 0 ? 'yellow' : 'transparent'}"
+            *ngFor="let number of evenNumbers">
+            {{ number }}
+          </li>
+          </div>
+        </ng-template> -->
+        <div *appUnless="onlyOdd">
           <li
             class="list-group-item"
             [ngClass]="{even: number % 2 === 0}"
